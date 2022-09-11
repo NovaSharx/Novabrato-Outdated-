@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+}
+
+#hero-image-container {
+    display: flex;
+}
+
+#hero-image {
+    width: 100vw;
+}
+
+@media (max-width: 600px ) {
+
+    #hero-image-container {
+        justify-content: center;
+    }
+
+    #hero-image {
+        object-fit: cover;
+        min-width: 600px;
+        
+    }
+
+}
