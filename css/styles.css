@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background-color: #3EA7C1;
 }
 
 #hero-image-container {
@@ -7,10 +8,31 @@ body {
 }
 
 #hero-image {
+    position: absolute;
     width: 100vw;
+    z-index: -2;
 }
 
-@media (max-width: 600px ) {
+#main-navigation {
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav-logo {
+    
+}
+
+#main-navigation ul li {
+    display: inline-block;
+}
+
+#header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 800px ) {
 
     #hero-image-container {
         justify-content: center;
@@ -18,8 +40,7 @@ body {
 
     #hero-image {
         object-fit: cover;
-        min-width: 600px;
-        
+        min-width: 800px;
     }
 
 }
