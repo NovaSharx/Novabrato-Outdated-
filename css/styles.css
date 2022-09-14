@@ -12,33 +12,40 @@ body {
 header {
     overflow-x: hidden;
     position: absolute;
+    z-index: 1;
 }
 
 #header-content {
     display: flex;
-    padding: 0.5em 0em;
+    padding: 8px 0px;
     width: 100vw;
     justify-content: space-between;
-    /* backdrop-filter: blur(100px); */
+    backdrop-filter: blur(100px);
+}
+
+#main-navigation {
+    display: flex;
+    justify-content: space-evenly;
+    width: 300px;
 }
 
 #hero-banner {
     background-image: url('/Inspiration/guitar-music-strings-bass-guitar-wallpaper-preview.jpg');
-    background-size: 100% auto;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
 
-/* #header-container {
-    backdrop-filter: blur(2px) brightness(25%);
-} */
-
 #headline-content {
-    margin-top: 34px;
+    padding: 50px;
+    padding-bottom: 0px;
+    min-height: 70vh;
+    backdrop-filter: blur(3px) brightness(25%);
 }
 
-#headline {
-    font-size: 1em;
+#headline h1 {
+    margin: 0;
+    font-size: 32px;
     text-align: center;
 }
 
