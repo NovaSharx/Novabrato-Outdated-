@@ -15,18 +15,30 @@ header {
     z-index: 1;
 }
 
+header a {
+    text-decoration: none;
+    color: white;
+}
+
 #header-content {
     display: flex;
     padding: 8px 0px;
     width: 100vw;
     justify-content: space-between;
-    backdrop-filter: blur(100px);
+    /* backdrop-filter: blur(100px); */
+}
+
+#header-logo {
+    padding: 0px 8px;
+    font-size: 8px;
+    height: 15px;
+    width: auto;
 }
 
 #main-navigation {
     display: flex;
     justify-content: space-evenly;
-    width: 300px;
+    width: 400px;
 }
 
 #hero-banner {
@@ -37,19 +49,19 @@ header {
 }
 
 #headline-content {
-    padding: 50px;
-    padding-bottom: 0px;
-    min-height: 70vh;
     backdrop-filter: blur(3px) brightness(25%);
+    padding: 100px 50px 0px 50px;
 }
 
 #headline h1 {
     margin: 0;
-    font-size: 32px;
+    font-size: 8vw;
     text-align: center;
 }
 
 #sub-headline {
+    padding: 0px 10vw;
+    font-size: 3vw;
     text-align: center;
 }
 
