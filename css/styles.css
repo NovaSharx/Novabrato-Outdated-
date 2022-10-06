@@ -12,7 +12,7 @@ body {
 
 header {
     position: absolute;
-    z-index: 3;
+    z-index: 2;
 }
 
 #header-content {
@@ -33,6 +33,7 @@ header {
     text-decoration: none;
     color: white;
 }
+
 .nav-link:hover {
     text-decoration: underline;
     text-decoration-thickness: 3px;
@@ -47,11 +48,32 @@ main {
 }
 
 #guitar-overlay {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    z-index: 1;
+}
+
+#guitar-opening {
     position: absolute;
     width: 100%;
-    height: 100vmax;
     display: flex;
-    z-index: 3;
+    justify-content: center;
+}
+#guitar-opening img {
+    width: 60vw;
+}
+
+#guitar-strings {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+#guitar-strings img {
+    position: fixed;
+    width: 30vw;
 }
 
 #hero-section {
@@ -65,14 +87,14 @@ main {
 #hero-section::before {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(5px);
     width: 100%;
     height: 80vh;
     content: '';
 }
 
 #headline-content {
-    position:absolute;
+    position: absolute;
     z-index: 2;
     height: 80vh;
     width: 100vw;
@@ -82,7 +104,8 @@ main {
 
 #headline {
     margin-top: 1em;
-    margin-bottom: 0.5em;;
+    margin-bottom: 0.5em;
+    ;
     font-size: 5em;
 }
 
@@ -111,8 +134,32 @@ main {
 #virtual-fretboard-container {
     margin: 2.5em;
     height: 1400px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     border-radius: 50px
+}
+
+#virtual-fretboard-items {
+    padding: 2em;
+    z-index: 2;
+}
+
+#virtual-fretboard-title {
+    padding: 5em;
+}
+
+#virtual-fretboard-title h2 {
+    margin: 0;
+    text-align: center;
+    font-size: 5em;
+    background: -webkit-linear-gradient(90deg, rgba(62, 193, 153, 1) 0%, rgba(62, 167, 193, 1) 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#virtual-fretboard-control-panel {
+    border-radius: 30px;
+    background-color: #3EC199;
+    height: 300px;
 }
 
 footer {
