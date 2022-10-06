@@ -14,42 +14,61 @@
 </head>
 
 <body>
+
     <header>
         <div id="header-content">
-            <a href="./index.html">
-                <img src="./Assets/SVGs/NOVABRATO Logo.svg" alt="Novabrato Logo" id="header-logo">
-            </a>
+            <div id="home-logo">
+                <a href="./index.html">
+                    <img id="header-logo" src="./Assets/SVGs/NOVABRATO Logo.svg" alt="Novabrato Logo">
+                </a>
+            </div>
             <div id="main-navigation">
-                <a href="">Fretboard</a>
-                <a href="">Exercises</a>
-                <a href="">About</a>
-                <a href="">Login</a>
+                <a class="nav-link" href="">Fretboard</a>
+                <a class="nav-link" href="">Exercises</a>
+                <a class="nav-link" href="">About</a>
+                <a class="nav-link" href="">Login</a>
             </div>
         </div>
     </header>
-    <div id="hero-banner">
-        <div id="headline-content">
-            <div id="headline">
-                <h1>Practice Guitar Improvisation</h1>
-            </div>
-            <div id="sub-headline">
-                <p>Improve your improvisational skills on the guitar through fun, interactive and engaging exercises
-                </p>
-            </div>
-            <div id="call-to-action">
-                <button>Start Practicing</button>
+
+    <main>
+
+        <!-- <div id="guitar-overlay">
+            <img id="guitar-opening" src="./Assets/SVGs/Guitar_Opening.svg" alt="">
+            <img id="guitar-strings" src="./Assets/SVGs/Strings.svg" alt="">
+        </div> -->
+
+        <div id="hero-section">
+            <div id="headline-content">
+                <div>
+                    <h1 id="headline">Practice Guitar <br> <span>Improvisation</span></h1>
+                </div>
+                <div>
+                    <h2 id="sub-headline">
+                        Improve your improvisational skills on the guitar through fun, interactive and engaging
+                        exercises
+                    </h2>
+                </div>
+                <div id="call-to-action">
+                    <a id="launch-practice" href="">START PRACTICING</a>
+                </div>
             </div>
         </div>
-    </div>
-    <main>
-        <div id="virtual-fretboard-container">
+        <div id="main-content">
+            <div id="virtual-fretboard-container">
+                <div id="virtual-fretboard-window">
 
+                </div>
+            </div>
         </div>
     </main>
+
     <footer>
-        Visit my linkedIn
+        Visit my LinkedIn
     </footer>
+
     <script src="./js/index.js"></script>
+
 </body>
 
 </html>
