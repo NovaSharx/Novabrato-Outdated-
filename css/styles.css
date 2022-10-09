@@ -74,6 +74,7 @@ main {
 #guitar-strings img {
     position: fixed;
     width: 30vw;
+    pointer-events: none;
 }
 
 #hero-section {
@@ -171,6 +172,19 @@ main {
     position: absolute;
     width: auto;
     z-index: 2;
+}
+
+#virtual-frets-image {
+    left: 126px;
+}
+
+#virtual-neck-image {
+    left: 126px;
+}
+
+#virtual-strings-image {
+    top: 10px;
+    left: 40px;
 }
 
 footer {
