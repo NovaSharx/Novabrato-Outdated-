@@ -12,7 +12,7 @@ body {
 
 header {
     position: absolute;
-    z-index: 2;
+    z-index: 3;
 }
 
 #header-content {
@@ -42,7 +42,7 @@ header {
 
 main {
     width: 100%;
-    min-height: 3000px;
+    min-height: 2500px;
     background: rgb(62, 193, 153);
     background: linear-gradient(0deg, rgba(62, 193, 153, 1) 0%, rgba(62, 167, 193, 1) 80%);
 }
@@ -128,19 +128,15 @@ main {
 }
 
 #main-content {
-    padding-top: 15em;
+    padding-top: 10em;
 }
 
 #virtual-fretboard-container {
+    z-index: 2;
     margin: 2.5em;
     height: 1400px;
     background-color: rgba(0, 0, 0, 0.9);
     border-radius: 50px
-}
-
-#virtual-fretboard-items {
-    padding: 2em;
-    z-index: 2;
 }
 
 #virtual-fretboard-title {
@@ -157,9 +153,24 @@ main {
 }
 
 #virtual-fretboard-control-panel {
+    margin: 2em;
+    height: 300px;
     border-radius: 30px;
     background-color: #3EC199;
-    height: 300px;
+}
+
+#virtual-guitar-neck {
+    position: relative;
+    margin: 5em 0;
+    height: 500px;
+    width: inherit;
+    overflow-x: scroll;
+}
+
+#virtual-guitar-neck img {
+    position: absolute;
+    width: auto;
+    z-index: 2;
 }
 
 footer {
