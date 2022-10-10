@@ -1,17 +1,17 @@
-<svg width="1711" height="380" viewBox="0 0 1711 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_b_105_54)">
-<mask id="path-1-inside-1_105_54" fill="white">
-<path d="M0.181213 0.375244L1710.37 0.375244V379.053H0.181213L0.181213 0.375244Z"/>
+<svg width="3421" height="379" viewBox="0 0 3421 379" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_b_346_616)">
+<mask id="path-1-inside-1_346_616" fill="white">
+<path d="M0.181274 0.293213L3420.56 0.293213V378.971H0.181274L0.181274 0.293213Z"/>
 </mask>
-<path d="M0.181213 0.375244L1710.37 0.375244V379.053H0.181213L0.181213 0.375244Z" fill="#0D0D0D"/>
-<path d="M0.181213 0.375244V-3.62476H-3.81879V0.375244H0.181213ZM0.181213 379.053H-3.81879V383.053H0.181213L0.181213 379.053ZM0.181213 4.37524L1710.37 4.37524V-3.62476L0.181213 -3.62476V4.37524ZM1710.37 375.053H0.181213L0.181213 383.053H1710.37V375.053ZM4.18121 379.053L4.18121 0.375244H-3.81879L-3.81879 379.053H4.18121Z" fill="#BFBFBF" mask="url(#path-1-inside-1_105_54)"/>
+<path d="M0.181274 0.293213L3420.56 0.293213V378.971H0.181274L0.181274 0.293213Z" fill="#0D0D0D"/>
+<path d="M0.181274 0.293213V-3.70679H-3.81873V0.293213H0.181274ZM0.181274 378.971H-3.81873V382.971H0.181274L0.181274 378.971ZM0.181274 4.29321L3420.56 4.29321V-3.70679L0.181274 -3.70679V4.29321ZM3420.56 374.971H0.181274L0.181274 382.971H3420.56V374.971ZM4.18127 378.971L4.18127 0.293213H-3.81873L-3.81873 378.971H4.18127Z" fill="#BFBFBF" mask="url(#path-1-inside-1_346_616)"/>
 </g>
 <defs>
-<filter id="filter0_b_105_54" x="-49.8188" y="-49.6248" width="1810.19" height="478.678" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_b_346_616" x="-49.8187" y="-49.7068" width="3520.38" height="478.678" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feGaussianBlur in="BackgroundImageFix" stdDeviation="25"/>
-<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_105_54"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_105_54" result="shape"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_346_616"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_346_616" result="shape"/>
 </filter>
 </defs>
 </svg>

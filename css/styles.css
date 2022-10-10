@@ -162,7 +162,7 @@ main {
 
 #virtual-guitar-neck {
     position: relative;
-    margin: 5em 0;
+    padding: 5em 0;
     height: 500px;
     width: inherit;
     overflow-x: scroll;
@@ -183,7 +183,7 @@ main {
 }
 
 #virtual-strings-image {
-    top: 10px;
+    top: 90px;
     left: 40px;
 }
 
