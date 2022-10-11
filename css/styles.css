@@ -160,6 +160,10 @@ main {
     background-color: #3EC199;
 }
 
+#virtual-fretboard {
+    position: relative;
+}
+
 #virtual-guitar-neck {
     position: relative;
     padding: 5em 0;
@@ -185,6 +189,36 @@ main {
 #virtual-strings-image {
     top: 90px;
     left: 40px;
+}
+
+#virtual-guitar-notes {
+    width: auto;
+    position: absolute;
+    top: 65px;
+    z-index: 2;
+}
+
+.string {
+    display: flex;
+}
+
+.fret {
+    display: flex;
+    width: 142.5px;
+    justify-content: center;
+}
+
+.note {
+    display: flex;
+    height: 50px;
+    width: 50px;
+    border: 2px solid #3EC199;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: #3EC199;
+    font-weight: bold;
 }
 
 footer {
