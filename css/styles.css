@@ -7,7 +7,7 @@ body {
     margin: 0;
     color: white;
     font-family: 'Comfortaa';
-    font-weight: 100;
+    font-weight: 300;
 }
 
 header {
@@ -106,7 +106,6 @@ main {
 #headline {
     margin-top: 1em;
     margin-bottom: 0.5em;
-    ;
     font-size: 5em;
 }
 
@@ -192,19 +191,25 @@ main {
 }
 
 #virtual-guitar-notes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: auto;
+    height: 410px;
     position: absolute;
     top: 65px;
+    left: -5px;
     z-index: 2;
 }
 
 .string {
     display: flex;
+    padding: 0px 0px;
 }
 
 .fret {
     display: flex;
-    width: 142.5px;
+    width: 142.8px;
     justify-content: center;
 }
 
@@ -218,7 +223,13 @@ main {
     align-items: center;
     background-color: black;
     color: #3EC199;
-    font-weight: bold;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.note:hover {
+    cursor:pointer;
+    border: 2px solid white;
 }
 
 footer {
