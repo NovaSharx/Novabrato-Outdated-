@@ -172,7 +172,7 @@ main {
 }
 
 #virtual-guitar-neck::-webkit-scrollbar {
-    height: 13px;
+    height: 15px;
   }
 
   #virtual-guitar-neck::-webkit-scrollbar-button {
@@ -189,14 +189,14 @@ main {
   /* Handle */
   #virtual-guitar-neck::-webkit-scrollbar-thumb {
     background-color: #3EC199;
-    border: 3px solid rgb(48, 48, 48);
+    border: 4px solid #1F2928;
     border-radius: 10px;
   }
   
   /* Handle on hover */
   #virtual-guitar-neck::-webkit-scrollbar-thumb:hover {
     background: #3EA7C1;
-    border: 3px solid rgba(255, 255, 255, 0.8);
+    border: 4px solid #1f2928c0;
   }
 
 #virtual-guitar-neck img {
@@ -251,14 +251,19 @@ main {
     align-items: center;
     background-color: black;
     color: #3EC199;
-    font-size: 1.2em;
-    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    transition: 0.1s;
 }
 
 .note:hover {
     cursor:pointer;
-    border: 5px solid #3EA7C1;
+    border: 8px solid #3EA7C1;
     color: #3EA7C1;
+    height: 48px;
+    width: 48px;
+    font-size: 1.8em;
 }
 
 footer {
