@@ -12,19 +12,20 @@ body {
 
 header {
     position: absolute;
+    width: 100%;
     z-index: 3;
 }
 
 #header-content {
     display: flex;
-    padding: 8px 0px;
-    width: 100vw;
+    margin: 20px 20px;
     justify-content: space-between;
+    align-items: center;
 }
 
 #main-navigation {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 400px;
     overflow-x: hidden;
 }
@@ -104,7 +105,7 @@ main {
 }
 
 #headline {
-    margin-top: 1em;
+    margin-top: 1.5em;
     margin-bottom: 0.5em;
     font-size: 5em;
 }
@@ -153,10 +154,101 @@ main {
 }
 
 #virtual-fretboard-control-panel {
-    margin: 2em;
-    height: 300px;
+    margin: 3em;
+    display: flex;
+    justify-content: space-between;
+}
+
+#main-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em;
+    width: 300px;
+    height: 250px;
+    border: 3px solid #3EC199;
     border-radius: 30px;
-    background-color: #3EC199;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+.main-panel-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-panel-label {
+    color: #3EC199;
+    margin-bottom: 0.5em;
+}
+
+.main-panel-selection {
+    height: 45px;
+    border: 2px solid #3EC199;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    font-size: 1.5em;
+    appearance: none;
+}
+
+.main-panel-selection:hover {
+    cursor: pointer;
+    border-color: #3EA7C1;
+    color: #3EA7C1;
+}
+
+.main-panel-selection:focus {
+    color: #3EA7C1;
+}
+
+#side-panel {
+    width: 1350px;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.side-panel-item {
+    padding: 0em 0.5em;
+    height: 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 1px solid #3EC199;
+    border-radius: 10px;
+    color: #3EC199;
+    backdrop-filter: blur(5px);
+}
+
+.side-panel-selectors {
+    display: flex;
+}
+
+.side-panel-button {
+    margin-right: 0.5em;
+    padding: 0.3em;
+    min-width: 80px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #3EC199;
+    border-radius: 10px;
+    background-color: black;
+}
+
+.side-panel-button span {
+    color: white;
+}
+
+.side-panel-button:hover {
+    cursor: pointer;
+    border-color: #3EA7C1;
+    color: #3EA7C1;
 }
 
 #virtual-fretboard {
@@ -179,21 +271,17 @@ main {
     width: 60px;
   }
   
-  /* Track */
   #virtual-guitar-neck::-webkit-scrollbar-track {
     background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(50px);
     border-radius: 10px;
   }
    
-  /* Handle */
   #virtual-guitar-neck::-webkit-scrollbar-thumb {
     background-color: #3EC199;
     border: 4px solid #1F2928;
     border-radius: 10px;
   }
   
-  /* Handle on hover */
   #virtual-guitar-neck::-webkit-scrollbar-thumb:hover {
     background: #3EA7C1;
     border: 4px solid #1f2928c0;
@@ -223,7 +311,7 @@ main {
     flex-direction: column;
     width: auto;
     position: absolute;
-    top: 65px;
+    top: 55px;
     left: -5px;
     z-index: 2;
 }
@@ -236,7 +324,7 @@ main {
 .fret {
     display: flex;
     width: 142.8px;
-    height: 71px;
+    height: 71.2px;
     justify-content: center;
     align-items: center;
 }
