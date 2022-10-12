@@ -171,6 +171,34 @@ main {
     overflow-x: scroll;
 }
 
+#virtual-guitar-neck::-webkit-scrollbar {
+    height: 13px;
+  }
+
+  #virtual-guitar-neck::-webkit-scrollbar-button {
+    width: 60px;
+  }
+  
+  /* Track */
+  #virtual-guitar-neck::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(50px);
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  #virtual-guitar-neck::-webkit-scrollbar-thumb {
+    background-color: #3EC199;
+    border: 3px solid rgb(48, 48, 48);
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  #virtual-guitar-neck::-webkit-scrollbar-thumb:hover {
+    background: #3EA7C1;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+  }
+
 #virtual-guitar-neck img {
     position: absolute;
     width: auto;
@@ -193,9 +221,7 @@ main {
 #virtual-guitar-notes {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     width: auto;
-    height: 410px;
     position: absolute;
     top: 65px;
     left: -5px;
@@ -210,7 +236,9 @@ main {
 .fret {
     display: flex;
     width: 142.8px;
+    height: 71px;
     justify-content: center;
+    align-items: center;
 }
 
 .note {
@@ -218,7 +246,7 @@ main {
     height: 50px;
     width: 50px;
     border: 2px solid #3EC199;
-    border-radius: 30px;
+    border-radius: 50px;
     justify-content: center;
     align-items: center;
     background-color: black;
@@ -229,7 +257,8 @@ main {
 
 .note:hover {
     cursor:pointer;
-    border: 2px solid white;
+    border: 5px solid #3EA7C1;
+    color: #3EA7C1;
 }
 
 footer {
