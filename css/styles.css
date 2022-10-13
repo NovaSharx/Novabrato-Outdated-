@@ -147,7 +147,7 @@ main {
     height: 90px;
     width: 490px;
     border: 2px solid #3EC199;
-    transition: 0.5s;
+    transition: 1s;
 }
 
 #call-to-action-box2 {
@@ -157,7 +157,7 @@ main {
     height: 90px;
     width: 490px;
     border: 2px solid #3EC199;
-    transition: 0.5s;
+    transition: 1s;
 }
 
 #launch-practice {
@@ -175,10 +175,18 @@ main {
 }
 
 #call-to-action:hover > div:nth-child(1) div {
+    left: -45px;
+    top: -15px;
+    height: 70px;
+    width: 410px;
     border-color: white;
 }
 
 #call-to-action:hover > div:nth-child(2) div {
+    right: -45px;
+    bottom: -15px;
+    height: 70px;
+    width: 410px;
     border-color: white;
 }
 
@@ -238,6 +246,7 @@ main {
 .main-panel-label {
     color: #3EC199;
     margin-bottom: 0.5em;
+    pointer-events: none;
 }
 
 .main-panel-selection {
@@ -256,10 +265,6 @@ main {
     border-color: #3EA7C1;
     color: #3EA7C1;
 }
-
-/* .main-panel-selection:focus {
-    color: #3EA7C1;
-} */
 
 #side-panel {
     width: 1350px;
