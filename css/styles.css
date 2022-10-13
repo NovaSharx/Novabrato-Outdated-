@@ -267,7 +267,8 @@ main {
 }
 
 #side-panel {
-    width: 1350px;
+    margin-left: 20px;
+    width: 100%;
     height: inherit;
     display: flex;
     flex-direction: column;
@@ -311,7 +312,8 @@ main {
 .side-panel-button:hover {
     cursor: pointer;
     border-color: #3EA7C1;
-    color: #3EA7C1;
+    color: white;
+    background-color: #3EA7C1;
 }
 
 #virtual-fretboard {
