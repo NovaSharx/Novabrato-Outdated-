@@ -13,5 +13,25 @@ const fifthString = document.getElementById('fifth-string')
 const sixthString = document.getElementById('sixth-string')
 
 function tuneString(string, note) {
-    
+    string.innerHTML = ""
+
+    noteIndex = noteLibrary.indexOf(note)
+
+    for (let iteration = 0; iteration < 25; iteration++) {
+        let index = (iteration + noteIndex) % noteLibrary.length
+
+        createNoteButton(string, noteLibrary[index])
+    }
+}
+
+function createNoteButton(string, note) {
+    let fretElement = document.createElement('div')
+    fretElement.setAttribute('class', 'fret')
+
+    let noteElement = document.createElement('div')
+    noteElement.setAttribute('class', 'note')
+    noteElement.innerHTML = note
+
+    fretElement.append(noteElement)
+    string.append(fretElement)
 }
