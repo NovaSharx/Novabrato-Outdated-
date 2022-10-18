@@ -300,6 +300,7 @@ main {
     min-width: 80px;
     height: 40px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     border: 1px solid #3EC199;
@@ -308,7 +309,7 @@ main {
 }
 
 .side-panel-button span {
-    color: white;
+    color: white
 }
 
 .side-panel-button:hover {
