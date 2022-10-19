@@ -135,13 +135,27 @@
                         <div class="side-panel-item">
                             <div class="side-panel-label">TRIADS</div>
                             <div class="side-panel-selectors">
-                                <div class="side-panel-button"><div>A minor:</div><span>A - C - E</span></div>
-                                <div class="side-panel-button"><div>B minor dim:</div><span>B - D - F</span></div>
-                                <div class="side-panel-button"><div>C major:</div><span>C - E - G</span></div>
-                                <div class="side-panel-button"><div>D minor:</div><span>D - F - A</span></div>
-                                <div class="side-panel-button"><div>E minor:</div><span>E - G - B</span></div>
-                                <div class="side-panel-button"><div>F major:</div><span>F - A - C</span></div>
-                                <div class="side-panel-button"><div>G major:</div><span>G - B - D</span></div>
+                                <div class="side-panel-button">
+                                    <div>A minor:</div><span>A - C - E</span>
+                                </div>
+                                <div class="side-panel-button">
+                                    <div>B minor dim:</div><span>B - D - F</span>
+                                </div>
+                                <div class="side-panel-button">
+                                    <div>C major:</div><span>C - E - G</span>
+                                </div>
+                                <div class="side-panel-button">
+                                    <div>D minor:</div><span>D - F - A</span>
+                                </div>
+                                <div class="side-panel-button">
+                                    <div>E minor:</div><span>E - G - B</span>
+                                </div>
+                                <div class="side-panel-button">
+                                    <div>F major:</div><span>F - A - C</span>
+                                </div>
+                                <div class="side-panel-button">
+                                    <div>G major:</div><span>G - B - D</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -154,7 +168,7 @@
                             alt="Virtual Fretboard Frets">
                         <img id="virtual-strings-image" src="./Assets/SVGs/Guitar Neck/Strings.svg"
                             alt="Virtual Fretboard Strings">
-                        <div id="virtual-guitar-notes">
+                        <div id="virtual-guitar-strings">
                             <div id="first-string" class="string">
                                 <div class="fret">
                                     <div class="note" class="E-note">E</div>
@@ -616,6 +630,34 @@
                                 <div class="fret">
                                     <div class="note" class="E-note">E</div>
                                 </div>
+                            </div>
+                        </div>
+                        <div id="virtual-guitar-settings">
+                            <div id="guitar-settings-panel">
+                                <div id="guitar-tuning-settings" class="guitar-settings-item">
+                                    <h3 class="guitar-settings-title">TUNING</h3>
+                                    <select name="tuning" id="guitar-tunings">
+                                        <option value="custom">~CUSTOM~</option>
+                                        <option value="standard">STANDARD</option>
+                                        <option value="drop-d">DROP D</option>
+                                    </select>
+                                    <div id="guitar-tuning-buttons">
+                                        <div class="guitar-tuning-button"></div>
+                                    </div>
+                                </div>
+                                <div id="guitar-placeholder-settings" class="guitar-settings-item">
+                                    <h3 class="guitar-settings-title">PLACEHOLDER</h3>
+                                </div>
+                                <div id="guitar-placeholder-settings" class="guitar-settings-item">
+                                    <h3 class="guitar-settings-title">PLACEHOLDER</h3>
+                                </div>
+                                <div id="guitar-placeholder-settings" class="guitar-settings-item">
+                                    <h3 class="guitar-settings-title">PLACEHOLDER</h3>
+                                </div>
+                            </div>
+                            <div id="guitar-settings-button">
+                                <img id="guitar-settings-button-image" src="./Assets/SVGs/gear-solid.svg"
+                                    alt="gear icon">
                             </div>
                         </div>
                     </div>

@@ -12,6 +12,9 @@ const forthString = document.getElementById('forth-string')
 const fifthString = document.getElementById('fifth-string')
 const sixthString = document.getElementById('sixth-string')
 
+const guitarSettingsButton = document.getElementById('guitar-settings-button')
+const guitarSettingsPanel = document.getElementById('guitar-settings-panel')
+
 function tuneString(string, note) {
     string.innerHTML = ""
 
@@ -29,9 +32,23 @@ function createNoteButton(string, note) {
     fretElement.setAttribute('class', 'fret')
 
     let noteElement = document.createElement('div')
-    noteElement.setAttribute('class', 'note')
+    noteElement.setAttribute('class', `note ${note.toLowerCase()}-note`)
     noteElement.innerHTML = note
 
     fretElement.append(noteElement)
     string.append(fretElement)
 }
+
+guitarSettingsButton.addEventListener('click', () => {
+    console.log(guitarSettingsPanel.style.width)
+    if (guitarSettingsPanel.style.width != '') {
+        guitarSettingsPanel.style.pointerEvents = 'none'
+        guitarSettingsPanel.style.width = ''
+        guitarSettingsPanel.style.opacity = '0%'
+    }
+    else {
+        guitarSettingsPanel.style.pointerEvents = 'all'
+        guitarSettingsPanel.style.width = '1200px' //'1714px'
+        guitarSettingsPanel.style.opacity = '100%'
+    }
+})
