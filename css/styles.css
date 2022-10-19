@@ -389,6 +389,12 @@ main {
     transition: 0.1s;
 }
 
+/* .a-note {
+    color: white;
+    background-color: #3EA7C1;
+    border-color: #3EA7C1;
+} */
+
 .note:hover {
     cursor: pointer;
     border: 8px solid #3EA7C1;

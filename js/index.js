@@ -24,7 +24,7 @@ const tuningDropD = ['D', 'A', 'D', 'G', 'B', 'E']
 window.onload = changeTuning(tuningStandard)
 
 guitarTunings.addEventListener('change', (event) => {
-    if (event.target.value === 'custom') {return} // Bug catch till custom option has functionality
+    if (event.target.value === 'custom') { return } // Bug catch till custom option has functionality
 
     let tuning
 
@@ -56,14 +56,12 @@ function createNoteButton(string, note) {
     let fretElement = document.createElement('div')
     fretElement.setAttribute('class', 'fret')
 
-    function identifyIncidentals(currentNote) {
-        if (currentNote.length > 1) {
-            return 'incidental'
-        }
-    }
-
     let noteElement = document.createElement('div')
-    noteElement.setAttribute('class', `note ${note.toLowerCase()}-note ${identifyIncidentals(note)}`)
+    noteElement.setAttribute('class', `note ${note.toLowerCase()}-note`)
+    // Indentify Incidentals
+    if (note.length > 1) {
+        noteElement.setAttribute('class', noteElement.getAttribute('class') + ' incidental')
+    }
     noteElement.innerHTML = note
 
     fretElement.append(noteElement)
@@ -71,7 +69,6 @@ function createNoteButton(string, note) {
 }
 
 guitarSettingsButton.addEventListener('click', () => {
-    console.log(guitarSettingsPanel.style.width)
     if (guitarSettingsPanel.style.width != '') {
         guitarSettingsPanel.style.pointerEvents = 'none'
         guitarSettingsPanel.style.width = ''
