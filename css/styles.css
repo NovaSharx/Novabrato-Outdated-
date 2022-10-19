@@ -398,6 +398,10 @@ main {
     font-size: 1.8em;
 }
 
+.incidental {
+    font-size: 1em;
+}
+
 #virtual-guitar-settings {
     position: absolute;
     display: flex;

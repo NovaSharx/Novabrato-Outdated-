@@ -12,8 +12,33 @@ const forthString = document.getElementById('forth-string')
 const fifthString = document.getElementById('fifth-string')
 const sixthString = document.getElementById('sixth-string')
 
+const stringArray = [sixthString, fifthString, forthString, thirdString, secondString, firstString]
+
 const guitarSettingsButton = document.getElementById('guitar-settings-button')
 const guitarSettingsPanel = document.getElementById('guitar-settings-panel')
+
+const guitarTunings = document.getElementById('guitar-tunings')
+const tuningStandard = ['E', 'A', 'D', 'G', 'B', 'E']
+const tuningDropD = ['D', 'A', 'D', 'G', 'B', 'E']
+
+window.onload = changeTuning(tuningStandard)
+
+guitarTunings.addEventListener('change', (event) => {
+    if (event.target.value === 'custom') {return} // Bug catch till custom option has functionality
+
+    let tuning
+
+    switch (event.target.value) {
+        case 'standard':
+            tuning = tuningStandard
+            break;
+        case 'drop-d':
+            tuning = tuningDropD
+            break;
+    }
+
+    changeTuning(tuning)
+})
 
 function tuneString(string, note) {
     string.innerHTML = ""
@@ -31,8 +56,14 @@ function createNoteButton(string, note) {
     let fretElement = document.createElement('div')
     fretElement.setAttribute('class', 'fret')
 
+    function identifyIncidentals(currentNote) {
+        if (currentNote.length > 1) {
+            return 'incidental'
+        }
+    }
+
     let noteElement = document.createElement('div')
-    noteElement.setAttribute('class', `note ${note.toLowerCase()}-note`)
+    noteElement.setAttribute('class', `note ${note.toLowerCase()}-note ${identifyIncidentals(note)}`)
     noteElement.innerHTML = note
 
     fretElement.append(noteElement)
@@ -52,3 +83,9 @@ guitarSettingsButton.addEventListener('click', () => {
         guitarSettingsPanel.style.opacity = '100%'
     }
 })
+
+function changeTuning(tuning) {
+    stringArray.forEach((string, index) => {
+        tuneString(string, tuning[index])
+    })
+}
