@@ -18,26 +18,20 @@ const guitarSettingsButton = document.getElementById('guitar-settings-button')
 const guitarSettingsPanel = document.getElementById('guitar-settings-panel')
 
 const guitarTunings = document.getElementById('guitar-tunings')
-const tuningStandard = ['E', 'A', 'D', 'G', 'B', 'E']
-const tuningDropD = ['D', 'A', 'D', 'G', 'B', 'E']
+const tuningList = {
+    'standard': ['E', 'A', 'D', 'G', 'B', 'E'],
+    'drop-d': ['D', 'A', 'D', 'G', 'B', 'E'],
+    'drop-c': ['C', 'G', 'C', 'F', 'A', 'D']
+}
 
-window.onload = changeTuning(tuningStandard)
+window.onload = changeTuning(tuningList.standard)
 
 guitarTunings.addEventListener('change', (event) => {
     if (event.target.value === 'custom') { return } // Bug catch till custom option has functionality
 
-    let tuning
+    let tuning = event.target.value
 
-    switch (event.target.value) {
-        case 'standard':
-            tuning = tuningStandard
-            break;
-        case 'drop-d':
-            tuning = tuningDropD
-            break;
-    }
-
-    changeTuning(tuning)
+    changeTuning(tuningList[tuning])
 })
 
 function tuneString(string, note) {
