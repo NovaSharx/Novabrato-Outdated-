@@ -13,8 +13,17 @@ const thirdString = document.getElementById('third-string')
 const forthString = document.getElementById('forth-string')
 const fifthString = document.getElementById('fifth-string')
 const sixthString = document.getElementById('sixth-string')
-
 const stringArray = [sixthString, fifthString, forthString, thirdString, secondString, firstString]
+
+const ctrlPanelRoot = document.getElementById('root')
+const ctrlPanelMode = document.getElementById('mode')
+const ctrlPanelNoteLabel = document.getElementById('note-label')
+
+const modeFormulas = {
+    'ionian': [1,1,0,1,1,1,0],
+    'aeolian': [1,0,1,1,0,1,1]
+}
+var currentMode = []
 
 const guitarSettingsButton = document.getElementById('guitar-settings-button')
 const guitarSettingsPanel = document.getElementById('guitar-settings-panel')
@@ -26,13 +35,18 @@ const tuningList = {
     'drop-c': ['C', 'G', 'C', 'F', 'A', 'D']
 }
 
-
 // FUNCTIONS
 
-function tuneString(string, note) {
+function loadGuitarNotes(tuning) {
+    stringArray.forEach((string, index) => {
+        loadString(string, tuning[index])
+    })
+}
+
+function loadString(string, note) {
     string.innerHTML = ""
 
-    noteIndex = noteLibrary.indexOf(note)
+    let noteIndex = noteLibrary.indexOf(note)
 
     for (let iteration = 0; iteration < 25; iteration++) {
         let index = (iteration + noteIndex) % noteLibrary.length
@@ -51,27 +65,34 @@ function createNoteButton(string, note) {
     if (note.length > 1) {
         noteElement.setAttribute('class', noteElement.getAttribute('class') + ' incidental')
     }
+
+    // Filter notes of the scale
+    if (ctrlPanelRoot.value && ctrlPanelMode.value) {
+        filterScaleNotes(noteElement, note)
+    }
+
     noteElement.innerHTML = note
 
     fretElement.append(noteElement)
     string.append(fretElement)
 }
 
-guitarSettingsButton.addEventListener('click', () => {
-    if (guitarSettingsPanel.style.width != '') {
-        guitarSettingsPanel.style.pointerEvents = 'none'
-        guitarSettingsPanel.style.width = ''
-        guitarSettingsPanel.style.opacity = '0%'
+function filterScaleNotes(noteElement, note) {
+    if (!currentMode.includes(note)) {
+        noteElement.setAttribute('class', noteElement.getAttribute('class') + ' disabled-note')
     }
-    else {
-        guitarSettingsPanel.style.pointerEvents = 'all'
-        guitarSettingsPanel.style.width = '1200px' //'1714px'
-        guitarSettingsPanel.style.opacity = '100%'
-    }
-})
+}
 
-function changeTuning(tuning) {
-    stringArray.forEach((string, index) => {
-        tuneString(string, tuning[index])
-    })
+function updateCurrentMode() {
+    currentMode = []
+    let currentModeFormula = modeFormulas[ctrlPanelMode.value]
+    let noteIndex = noteLibrary.indexOf(ctrlPanelRoot.value)
+    let modeIndex = 0
+    for (let iteration = 0; iteration < 12; iteration++, modeIndex++) {
+        let index = (iteration + noteIndex) % noteLibrary.length
+
+        currentMode.push(noteLibrary[index])
+
+        iteration += currentModeFormula[modeIndex]
+    }
 }

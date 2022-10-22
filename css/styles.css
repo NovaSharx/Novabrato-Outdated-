@@ -389,6 +389,13 @@ main {
     transition: 0.1s;
 }
 
+.disabled-note {
+    pointer-events: none;
+    color: white;
+    border-color: white;
+    opacity: 25%;
+}
+
 /* .a-note {
     color: white;
     background-color: #3EA7C1;
