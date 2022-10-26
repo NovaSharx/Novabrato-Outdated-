@@ -1,5 +1,7 @@
 // GLOBALVARIABLES
 
+const guitarKeyManager = new GuitarKeyManager()
+
 const noteLibrary = ['A', 'A#/Bb', 'B', 'C', 'C#/Db', 'D', 'D#/Eb', 'E', 'F', 'F#/Gb', 'G', 'G#/Ab']
 
 const noteFormats = {
@@ -19,9 +21,12 @@ const ctrlPanelRoot = document.getElementById('root')
 const ctrlPanelMode = document.getElementById('mode')
 const ctrlPanelNoteLabel = document.getElementById('note-label')
 
+const triadsArray = document.getElementsByClassName('triad')
+
 const modeFormulas = {
-    'ionian': [1,1,0,1,1,1,0],
-    'aeolian': [1,0,1,1,0,1,1]
+    'ionian': [1, 1, 0, 1, 1, 1, 0],
+    'aeolian': [1, 0, 1, 1, 0, 1, 1],
+    'major pentatonic': [1,1,2,1,2]
 }
 var currentMode = []
 
@@ -66,21 +71,43 @@ function createNoteButton(string, note) {
         noteElement.setAttribute('class', noteElement.getAttribute('class') + ' incidental')
     }
 
-    // Filter notes of the scale
     if (ctrlPanelRoot.value && ctrlPanelMode.value) {
+        // Filter notes of the current scale
         filterScaleNotes(noteElement, note)
     }
 
     noteElement.innerHTML = note
 
+    // noteElement.addEventListener('click', (event) => {
+    //     let similarNotes = document.getElementsByClassName(`${note.toLowerCase()}-note`)
+    //     for (currentNote of similarNotes) {
+    //         currentNote.style.borderColor = '#3EA7C1'
+    //         currentNote.style.color = 'white'
+    //     }
+
+    //     event.target.style.backgroundColor = '#3EA7C1'
+    //     event.target.style.color = 'white'
+    // })
+
+    noteElement.addEventListener('mouseenter', () => {
+        let similarNotes = document.getElementsByClassName(`${note.toLowerCase()}-note`)
+
+        for (currentNote of similarNotes) {
+            currentNote.style.borderColor = '#3EA7C1'
+            currentNote.style.color = 'white'
+        }
+    })
+
+    noteElement.addEventListener('mouseout', () => {
+        let similarNotes = document.getElementsByClassName(`${note.toLowerCase()}-note`)
+        for (currentNote of similarNotes) {
+            currentNote.style.borderColor = '#3EC199'
+            currentNote.style.color = '#3EC199'
+        }
+    })
+
     fretElement.append(noteElement)
     string.append(fretElement)
-}
-
-function filterScaleNotes(noteElement, note) {
-    if (!currentMode.includes(note)) {
-        noteElement.setAttribute('class', noteElement.getAttribute('class') + ' disabled-note')
-    }
 }
 
 function updateCurrentMode() {
@@ -94,5 +121,13 @@ function updateCurrentMode() {
         currentMode.push(noteLibrary[index])
 
         iteration += currentModeFormula[modeIndex]
+    }
+
+    guitarKeyManager.getTriads()
+}
+
+function filterScaleNotes(noteElement, note) {
+    if (!currentMode.includes(note)) {
+        noteElement.setAttribute('class', noteElement.getAttribute('class') + ' disabled-note')
     }
 }
