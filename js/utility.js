@@ -21,14 +21,20 @@ const ctrlPanelRoot = document.getElementById('root')
 const ctrlPanelMode = document.getElementById('mode')
 const ctrlPanelNoteLabel = document.getElementById('note-label')
 
+const triadsTitle = document.getElementById('triads-title')
 const triadsArray = document.getElementsByClassName('triad')
 
 const modeFormulas = {
     'ionian': [1, 1, 0, 1, 1, 1, 0],
     'aeolian': [1, 0, 1, 1, 0, 1, 1],
-    'major pentatonic': [1,1,2,1,2]
+    'major-pentatonic': [1, 1, 2, 1, 2],
+    'minor-pentatonic': [2, 1, 1, 2, 1]
 }
-var currentMode = []
+
+const chordCycle = ['major', 'minor', 'minor', 'major', 'major', 'minor', 'minor dim']
+
+const circleOfFifthsMaj = ['C', 'G', 'D', 'A', 'E', 'B', 'Gb/F#', 'Db', 'Ab', 'Eb', 'Bb', 'F']
+const circleOfFifthsMin = ['Am', 'Em', 'Bm', 'F#m', 'C#m', 'G#m', 'Ebm', 'Bbm', 'Fm', 'Cm', 'Gm', 'Dm']
 
 const guitarSettingsButton = document.getElementById('guitar-settings-button')
 const guitarSettingsPanel = document.getElementById('guitar-settings-panel')
@@ -78,24 +84,14 @@ function createNoteButton(string, note) {
 
     noteElement.innerHTML = note
 
-    // noteElement.addEventListener('click', (event) => {
-    //     let similarNotes = document.getElementsByClassName(`${note.toLowerCase()}-note`)
-    //     for (currentNote of similarNotes) {
-    //         currentNote.style.borderColor = '#3EA7C1'
-    //         currentNote.style.color = 'white'
-    //     }
-
-    //     event.target.style.backgroundColor = '#3EA7C1'
-    //     event.target.style.color = 'white'
-    // })
-
     noteElement.addEventListener('mouseenter', () => {
         let similarNotes = document.getElementsByClassName(`${note.toLowerCase()}-note`)
 
         for (currentNote of similarNotes) {
             currentNote.style.borderColor = '#3EA7C1'
-            currentNote.style.color = 'white'
+            currentNote.style.color = '#3EA7C1'
         }
+        noteElement.style.color = 'white'
     })
 
     noteElement.addEventListener('mouseout', () => {
@@ -110,24 +106,8 @@ function createNoteButton(string, note) {
     string.append(fretElement)
 }
 
-function updateCurrentMode() {
-    currentMode = []
-    let currentModeFormula = modeFormulas[ctrlPanelMode.value]
-    let noteIndex = noteLibrary.indexOf(ctrlPanelRoot.value)
-    let modeIndex = 0
-    for (let iteration = 0; iteration < 12; iteration++, modeIndex++) {
-        let index = (iteration + noteIndex) % noteLibrary.length
-
-        currentMode.push(noteLibrary[index])
-
-        iteration += currentModeFormula[modeIndex]
-    }
-
-    guitarKeyManager.getTriads()
-}
-
 function filterScaleNotes(noteElement, note) {
-    if (!currentMode.includes(note)) {
+    if (!guitarKeyManager.currentMode.includes(note)) {
         noteElement.setAttribute('class', noteElement.getAttribute('class') + ' disabled-note')
     }
 }

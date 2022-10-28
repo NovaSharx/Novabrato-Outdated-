@@ -1,16 +1,34 @@
 window.onload = loadGuitarNotes(tuningList.standard)
 
 ctrlPanelRoot.addEventListener('change', () => {
-    if (!ctrlPanelMode.value) { return }
+    if (!ctrlPanelMode.value){ return }
 
-    updateCurrentMode()
+    if (!ctrlPanelRoot.value) {
+        guitarKeyManager.currentMode = []
+    }
+    else {
+        guitarKeyManager.updateCurrentMode()
+        if (ctrlPanelMode.value === 'aeolian' || ctrlPanelMode.value === 'ionian') {
+            guitarKeyManager.getTriads()
+        }
+    }
+
     loadGuitarNotes(tuningList[guitarTunings.value])
 })
 
 ctrlPanelMode.addEventListener('change', () => {
     if (!ctrlPanelRoot.value) { return }
 
-    updateCurrentMode()
+    if (!ctrlPanelMode.value) {
+        guitarKeyManager.currentMode = []
+    }
+    else {
+        guitarKeyManager.updateCurrentMode()
+        if (ctrlPanelMode.value === 'aeolian' || ctrlPanelMode.value === 'ionian') {
+            guitarKeyManager.getTriads()
+        }
+    }
+
     loadGuitarNotes(tuningList[guitarTunings.value])
 })
 

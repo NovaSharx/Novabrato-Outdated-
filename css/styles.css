@@ -148,7 +148,7 @@ main {
     top: -5px;
     height: 90px;
     width: 490px;
-    border: 2px solid #3EC199;
+    border: 1px solid #3EC199;
     transition: 1s;
 }
 
@@ -158,9 +158,29 @@ main {
     bottom: -5px;
     height: 90px;
     width: 490px;
-    border: 2px solid #3EC199;
+    border: 1px solid #3EC199;
     transition: 1s;
 }
+
+/* #call-to-action-box3 {
+    position: relative;
+    top: -5px;
+    right: -5px;
+    height: 90px;
+    width: 490px;
+    border: 1px solid #3EC199;
+    transition: 1s;
+}
+
+#call-to-action-box4 {
+    position: relative;
+    left: -5px;
+    bottom: -5px;
+    height: 90px;
+    width: 490px;
+    border: 1px solid #3EC199;
+    transition: 1s;
+} */
 
 #launch-practice {
     position: absolute;
@@ -192,7 +212,23 @@ main {
     border-color: white;
 }
 
-#call-to-action:hover>div:nth-child(3) {
+#call-to-action:hover>div:nth-child(3) div {
+    right: -45px;
+    top: -15px;
+    height: 70px;
+    width: 410px;
+    border-color: white;
+}
+
+#call-to-action:hover>div:nth-child(4) div {
+    left: -45px;
+    bottom: -15px;
+    height: 70px;
+    width: 410px;
+    border-color: white;
+}
+
+#call-to-action:hover>div:nth-child(5) {
     color: white;
 }
 
