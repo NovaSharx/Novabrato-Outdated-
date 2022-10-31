@@ -438,6 +438,16 @@ main {
     border-color: #3EA7C1;
 } */
 
+.hovered-note {
+    border-color: #3EA7C1;
+    color: white;
+}
+
+.highlighted-triad-note {
+    background-color: #3EC199;
+    color: white;
+}
+
 .note:hover {
     cursor: pointer;
     border: 8px solid #3EA7C1;

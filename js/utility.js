@@ -22,7 +22,7 @@ const ctrlPanelMode = document.getElementById('mode')
 const ctrlPanelNoteLabel = document.getElementById('note-label')
 
 const triadsTitle = document.getElementById('triads-title')
-const triadsArray = document.getElementsByClassName('triad')
+const triadsButtonArray = Array.from(document.getElementsByClassName('triad'))
 
 const modeFormulas = {
     'ionian': [1, 1, 0, 1, 1, 1, 0],
@@ -71,13 +71,16 @@ function createNoteButton(string, note) {
     fretElement.setAttribute('class', 'fret')
 
     let noteElement = document.createElement('div')
+    noteElement.setAttribute('data-note', `${note}`)
     noteElement.setAttribute('class', `note ${note.toLowerCase()}-note`)
+
     // Indentify Incidentals
     if (note.length > 1) {
         noteElement.setAttribute('class', noteElement.getAttribute('class') + ' incidental')
     }
 
     if (ctrlPanelRoot.value && ctrlPanelMode.value) {
+
         // Filter notes of the current scale
         filterScaleNotes(noteElement, note)
     }
@@ -87,18 +90,15 @@ function createNoteButton(string, note) {
     noteElement.addEventListener('mouseenter', () => {
         let similarNotes = document.getElementsByClassName(`${note.toLowerCase()}-note`)
 
-        for (currentNote of similarNotes) {
-            currentNote.style.borderColor = '#3EA7C1'
-            currentNote.style.color = '#3EA7C1'
+        for (const currentNote of similarNotes) {
+            currentNote.setAttribute('class', currentNote.getAttribute('class') + ' hovered-note')
         }
-        noteElement.style.color = 'white'
     })
 
     noteElement.addEventListener('mouseout', () => {
         let similarNotes = document.getElementsByClassName(`${note.toLowerCase()}-note`)
-        for (currentNote of similarNotes) {
-            currentNote.style.borderColor = '#3EC199'
-            currentNote.style.color = '#3EC199'
+        for (const currentNote of similarNotes) {
+            currentNote.setAttribute('class', currentNote.getAttribute('class').replace(' hovered-note',''))
         }
     })
 
@@ -107,7 +107,10 @@ function createNoteButton(string, note) {
 }
 
 function filterScaleNotes(noteElement, note) {
-    if (!guitarKeyManager.currentMode.includes(note)) {
+    if (guitarKeyManager.currentMode.includes(note)) {
+        noteElement.setAttribute('class', noteElement.getAttribute('class') + ' active-note')
+    }
+    else {
         noteElement.setAttribute('class', noteElement.getAttribute('class') + ' disabled-note')
     }
 }

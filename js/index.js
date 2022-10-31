@@ -1,7 +1,7 @@
 window.onload = loadGuitarNotes(tuningList.standard)
 
 ctrlPanelRoot.addEventListener('change', () => {
-    if (!ctrlPanelMode.value){ return }
+    if (!ctrlPanelMode.value) { return }
 
     if (!ctrlPanelRoot.value) {
         guitarKeyManager.currentMode = []
@@ -30,6 +30,18 @@ ctrlPanelMode.addEventListener('change', () => {
     }
 
     loadGuitarNotes(tuningList[guitarTunings.value])
+})
+
+ctrlPanelNoteLabel.addEventListener('change', () => {
+    if (!ctrlPanelRoot.value || !ctrlPanelMode.value) { return }
+
+    guitarKeyManager.convertNoteLabels(ctrlPanelNoteLabel.value)
+})
+
+triadsButtonArray.forEach((triadButton, index) => {
+    triadButton.addEventListener('click', () => {
+        guitarKeyManager.spotLightTriadNotes(guitarKeyManager.triads[index])
+    })
 })
 
 guitarSettingsButton.addEventListener('click', () => {
