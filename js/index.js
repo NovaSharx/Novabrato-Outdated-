@@ -14,6 +14,7 @@ ctrlPanelRoot.addEventListener('change', () => {
     }
 
     loadGuitarNotes(tuningList[guitarTunings.value])
+    guitarKeyManager.convertNoteLabels()
 })
 
 ctrlPanelMode.addEventListener('change', () => {
@@ -30,12 +31,13 @@ ctrlPanelMode.addEventListener('change', () => {
     }
 
     loadGuitarNotes(tuningList[guitarTunings.value])
+    guitarKeyManager.convertNoteLabels()
 })
 
 ctrlPanelNoteLabel.addEventListener('change', () => {
     if (!ctrlPanelRoot.value || !ctrlPanelMode.value) { return }
 
-    guitarKeyManager.convertNoteLabels(ctrlPanelNoteLabel.value)
+    guitarKeyManager.convertNoteLabels()
 })
 
 triadsButtonArray.forEach((triadButton, index) => {

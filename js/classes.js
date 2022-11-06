@@ -19,10 +19,11 @@ class GuitarKeyManager {
             let index = (iteration + noteIndex) % noteLibrary.length
 
             this.currentMode.push(noteLibrary[index])
-            this.noteLabels.notes.push(noteLibrary[index])
+            
 
             iteration += currentModeFormula[modeIndex]
         }
+        this.noteLabels.notes = this.currentMode
     }
 
     getTriads() {
@@ -51,12 +52,19 @@ class GuitarKeyManager {
         })
     }
 
-    convertNoteLabels(labelOption) {
-        let label = this.noteLabels[labelOption]
+    convertNoteLabels() {
+        let label = this.noteLabels[ctrlPanelNoteLabel.value]
         let activeNotes = Array.from(document.getElementsByClassName('active-note'))
 
         for (const note of activeNotes) {
             note.innerHTML = label[this.currentMode.indexOf(note.dataset.note)]
+            if (note.dataset.incidental) {
+                if (ctrlPanelNoteLabel.value != 'notes') {
+                    note.style.fontSize = '1.5em'
+                } else {
+                    note.style.fontSize = '1em'
+                }
+            }
         }
     }
 

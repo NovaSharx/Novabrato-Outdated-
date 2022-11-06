@@ -432,12 +432,6 @@ main {
     opacity: 25%;
 }
 
-/* .a-note {
-    color: white;
-    background-color: #3EA7C1;
-    border-color: #3EA7C1;
-} */
-
 .hovered-note {
     border-color: #3EA7C1;
     color: white;
@@ -457,7 +451,7 @@ main {
     font-size: 1.8em;
 }
 
-.incidental {
+[data-incidental=true] {
     font-size: 1em;
 }
 

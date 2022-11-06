@@ -76,7 +76,7 @@ function createNoteButton(string, note) {
 
     // Indentify Incidentals
     if (note.length > 1) {
-        noteElement.setAttribute('class', noteElement.getAttribute('class') + ' incidental')
+        noteElement.setAttribute('data-incidental', true)
     }
 
     if (ctrlPanelRoot.value && ctrlPanelMode.value) {
@@ -86,6 +86,14 @@ function createNoteButton(string, note) {
     }
 
     noteElement.innerHTML = note
+
+    noteElement.addEventListener('click', () => {
+        let similarNotes = document.getElementsByClassName(`${note.toLowerCase()}-note`)
+
+        for (const currentNote of similarNotes) {
+            currentNote.setAttribute('class', currentNote.getAttribute('class') + ' hovered-note')
+        }
+    })
 
     noteElement.addEventListener('mouseenter', () => {
         let similarNotes = document.getElementsByClassName(`${note.toLowerCase()}-note`)
